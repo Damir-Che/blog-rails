@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+
   </head>
 
   <body>
@@ -34,6 +35,21 @@
 
 
     <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <% flash.each do |name, message| %>
+            <div class="alert alert-<%= name %>">
+              <%= message %>
+            </div>
+          <% end %>
+        </div>
+
+<!--        <p class="flash-error pl-1"><%#= flash[:error] %></p>-->
+<!--        <p class="flash-seccess pl-1"><%#= flash[:seccess] %></p>-->
+
+      </div>
+
+
       <%= yield %>
     </div>
 

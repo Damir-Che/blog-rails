@@ -2,9 +2,17 @@ h1{
   border: 1px solid darkred;
   text-align: center;
 }
+//----переделать по человечесикй
+.field_with_errors label {
+  color: #B00100;
+}
 
-//.popost-headst {
-//  margin-bottom: 1em;
-//  padding: 1em 0;
-//  border-bottom: 1px solid lightblue;
-//}
+.field_with_errors input {
+  border: 1px solid #B00100;
+}
+
+ .field_with_errors textarea {
+   border: 1px solid #B00100;
+ }
+ //------------------------------------
+
