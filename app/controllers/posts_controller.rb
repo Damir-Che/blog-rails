@@ -23,7 +23,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      # flash[:seccess] = 'Статья успешно создана'
       redirect_to @post, success: 'Статья успешна создана'#success- flash функции
     else
       flash.now[:danger] = 'Статья не создана' #danger- flash функции
@@ -40,7 +39,6 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      # flash[:seccess] = 'Статья успешно обновлена'
       redirect_to @post, success: 'Статья успешно обновлена' #success- flash функции
     else
       flash.now[:danger] = 'Статья не обновлена' #danger- flash функции
@@ -52,7 +50,6 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    # flash[:seccess] = 'Статья успешно удалена'
     redirect_to posts_path, success: 'Статья успешно удалена'#success- flash функции
   end
   #--------------------------------------
