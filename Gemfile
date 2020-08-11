@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+#mini_magick
+gem "mini_magick"
+#carrierwave
+gem 'carrierwave', '~> 2.0'
 # butstrap
 gem 'bootstrap', '~> 4.5.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

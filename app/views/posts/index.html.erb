@@ -1,7 +1,6 @@
 
 <h4 class="mt-4"><%= t('posts.index.title') %></h4>
 
-<%#= render @posts %>
 
 <% @posts.each do |p| %>
   <artical class="post m-4 p-4">
@@ -15,7 +14,8 @@
         <%= link_to 'Удалить', post_path(p), method: :delete, data: { confirm: 'Вы уверены?'} %>
       </small>
     </section>
-    <section class="post-summary mt-4">
+    <section class="post-summary clearfix mt-4">
+      <%= image_tag p.image.url(:thumb), class: 'img-thumbnail thumb' if p.image? %>
       <%= p.summary %>
     </section>
   </artical>
