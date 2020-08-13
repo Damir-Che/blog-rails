@@ -12,7 +12,7 @@
     </section>
     <section class="post-body mt-4">
       <%= image_tag @post.image.url(:large), class: 'img_show' if @post.image? %>
-      <%= @post.body %>
+      <%= @post.body.html_safe %> <!-- .html_safe - для trix-->
     </section>
   </artical>
   <hr>

@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+#Trix
+gem 'trix'
+gem 'trix-gem', '~> 0.11.2'
 #mini_magick
 gem "mini_magick"
 #carrierwave
