@@ -1,0 +1,25 @@
+
+<%= form_for ([@post, @post.comments.build]) do |f| %>
+
+  <div class="container pb-cmnt-container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-info">
+          <div class="panel-body">
+
+            <%= f.text_field :name, class: 'form-control comment_user_name', placeholder: "Имя" %> <br>
+            <%= f.text_area :body, class: 'form-control comment_comment_body', placeholder: "Комментарии" %> <br>
+
+
+              <%= f.submit 'Сохранить', class: 'btn btn-primary pull-right' %>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<% end %>

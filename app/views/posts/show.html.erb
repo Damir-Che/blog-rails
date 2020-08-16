@@ -14,6 +14,24 @@
       <%= image_tag @post.image.url(:large), class: 'img_show' if @post.image? %>
       <%= @post.body.html_safe %> <!-- .html_safe - для trix-->
     </section>
-  </artical>
-  <hr>
+    <hr>
+<!--комменты-->
 
+    <section class="section_comment">
+      <div class="container section_body">
+
+        <%= render 'comments/form' %> <!-- паршал- для формы -->
+        <hr>
+        <h4><%= @post.comments.count %> Комминтарии</h4>
+        <%= render @post.comments %> <!-- паршал- для всех коментов  -->
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+  </artical>
