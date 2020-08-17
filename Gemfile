@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+# will_paginate boostrap - необходим для стилей бутрап
+gem 'will_paginate-bootstrap4'
+# will_paginate
+gem 'will_paginate', '~> 3.1.0'
 #Trix
 gem 'trix'
 gem 'trix-gem', '~> 0.11.2'

@@ -19,14 +19,33 @@ h1{
 .img_show{
   display: block;
   margin-bottom: 2em;
+  width: 400px;
+  height: 400px;
 }
 
 .thumb{
   float: left;
   margin-right: 1em;
+  //width: 200px;
+  //height: 200px;
 }
 
 //для trix
 .editor{
   min-height: 300px;
 }
+
+//.pagination a{
+//  padding: 5px;
+//  display: inline;
+//}
+//
+//.previous_page{
+//  color: #B00100;
+//  padding: 5px;
+//}
+//
+//.next_page{
+//  color: #B00100;
+//  padding: 5px;
+//}

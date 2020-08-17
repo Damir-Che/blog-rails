@@ -1,7 +1,8 @@
-<p style="font-weight: bold">Name: <%= comment.name %> </p>
+<p style="font-weight: bold"> <%= comment.name  %> </p>
 
 <p><%= comment.body %></p>
 
 <!--<time><%#= comment.created_at.to_date.strftime('%d %B, %Y') %></time>-->
 
-<p><%= link_to 'удалить', [comment.post, comment], method: :delete, data: {confirm: 'Вы уверенны?'} %></p>
+<small><%= link_to 'удалить', [comment.post, comment], method: :delete, data: {confirm: 'Вы уверенны?'} if comment.persisted? %></small>
+<hr>
