@@ -13,5 +13,13 @@ ru:
     form:
       submit: 'Сохранить'
 
-  comments:
+  categories:
+    index:
+      title: 'Категории'
+    new:
+      title: 'Новая категория'
+    edit:
+      title: 'Редакироваие категории'
+    form:
+      submit: 'Сохранить'
 

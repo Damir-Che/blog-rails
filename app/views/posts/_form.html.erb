@@ -29,6 +29,15 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :category_id %>
+
+    <!--Category.order(:name), :id, :name - получаем прямо из бд список категории в который нужно :id, и  :name -->
+    <!--{ include_blank: true } - пустая строка если мы не хотим указывать категорию для поста -->
+    <%= f.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true }, class: 'form-control' %>
+
+  </div>
+
+  <div class="form-group">
     <%= f.file_field :image %>
   </div>
 
