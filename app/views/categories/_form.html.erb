@@ -1,0 +1,40 @@
+<% if @category.errors.any? %> <!-- если есть ошибки...  -->
+  <div class="alert alert-danger">
+    <h5><%= t('common.errors') %></h5>
+    <ul>
+      <% @category.errors.full_messages.each do |message| %>
+        <li><%= message %></li><!-- ...выводим их всех  -->
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+<%= form_for @category do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :parent_id %> <!--parent_id - встроенный метод  -->
+
+    <!--Category.order(:name), :id, :name - получаем прямо из бд список категории в который нужно :id, и  :name -->
+    <!--{ include_blank: true } - пустая строка если мы не хотим указывать категорию для поста -->
+    <%= f.collection_select :parent_id, @categories, :id, :name, { include_blank: true }, class: 'form-control' %>
+
+  </div>
+
+
+
+  <div class="form-group">
+    <%#= f.submit t('posts.form.submit', action: @post.new_record ? 'Создать' : 'Изменить'), class: 'btn btn-primary' %>
+    <%= f.submit  t('posts.form.submit'), class: 'btn btn-primary' %>
+    <%= link_to t('common.back'), :back, class: 'btn btn-outline-secondary' %>
+  </div>
+
+
+
+<% end %>

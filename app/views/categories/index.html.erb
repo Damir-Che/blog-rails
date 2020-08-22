@@ -1,0 +1,33 @@
+<h1> <%= t('.title') %></h1>
+
+<div class="buttons_panel">
+  <%= link_to 'Новая котегория', new_category_path, class: 'btn btn-outline-primary btn-sm' %>
+</div>
+
+<section id="categories">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Название</th>
+      <th>Категория родителя</th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+      <% @categories.each_with_index do |c, index| %> <!--перебор всех категории вместе с их индексами -->
+      <tr>
+        <td><%= index + 1 %></td> <!-- индекс(id) - категории из бд -->
+        <td><%= c.name %></td>
+        <td><%= c.parent.name if c.parent.present? %></td> <!-- .parent - метод добавлен гемомо -->
+        <td>
+          <%= link_to 'Изменить', edit_category_path(c), class: 'btn btn-outline-primary btn-sm' %>
+          <%= link_to 'Удалить', category_path(c), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger btn-sm' %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</section>

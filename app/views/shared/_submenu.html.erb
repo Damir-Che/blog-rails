@@ -1,0 +1,13 @@
+<div class="submenu">
+  <h2>Категории</h2>
+  <ul class="nav nav-pills nav-stacked">
+    <% Category.roots.each do |c| %> <!-- .roots - встроенный метод в гем. Возвращает всех родителей категории-->
+      <li class="nav-item">
+        <!-- кнопка стветиться если адрес url совпадает с текущей -->
+        <%= link_to c.name, c, class: "nav-link #{'active' if current_page? (category_path(c))}" %>
+        <!-- выводим всех детей родителя -->
+        <%= render 'shared/submenu_categories', categories: c.root.descendants.arrange %> <!-- .descendants - возвращает всех детей данной записи -->
+      </li>
+    <% end %>
+  </ul>
+</div>
