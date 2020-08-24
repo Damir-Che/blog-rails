@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+#регистрация
+gem 'devise'
 #ancestry - для вложенности
 gem 'ancestry'
 # will_paginate boostrap - необходим для стилей бутрап
