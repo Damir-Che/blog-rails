@@ -16,31 +16,26 @@
           <%= link_to 'Удалить', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?'} %>
         <%end %>
         <!---------------------- -->
-
       </small>
     </section>
+
     <section class="post-body mt-4">
       <%= image_tag @post.image.url(:large), class: 'img_show' if @post.image? %>
       <%= @post.body.html_safe %> <!-- .html_safe - для trix-->
     </section>
     <hr>
+
 <!--комменты-->
 
     <section class="section_comment">
       <div class="container section_body">
-
-        <%= render 'comments/form' %> <!-- паршал- для формы -->
+        <% if user_signed_in? %>
+          <%= render 'comments/form' %> <!-- паршал- для формы заполнения -->
+        <% end %>
         <hr>
         <h4><%= @post.comments.count %> Комминтарии</h4>
-        <%= render @post.comments %> <!-- паршал- для всех коментов  -->
-
+        <%= render @post.comments %> <!-- паршал- для отображения всех коментов  -->
       </div>
     </section>
-
-
-
-
-
-
 
   </artical>

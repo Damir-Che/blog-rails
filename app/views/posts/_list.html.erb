@@ -5,6 +5,7 @@
 <% @posts.each do |p| %>
   <artical class="post m-4 p-4">
     <section class="post-head">
+      <p>User_id: <%= p.user_id %></p>
       <h2><%= link_to p.title, post_path(p) %></h2>
       <small>
         <time><%= p.created_at.to_date.strftime('%d %B, %Y') %></time>

@@ -1,10 +1,13 @@
 class CommentsController < ApplicationController
 
+
   before_action :set_comment, only: [:create, :destroy]
 
   def create
 
-    @comment = @post.comments.create(comment_params)
+    @comment = @post.comments.new(comment_params)
+    @comment.user_id = current_user.id
+    @comment.save
     redirect_to post_path(@post)
   end
 
@@ -18,7 +21,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:name,:body)
+    params.require(:comment).permit(:name, :body)
 
   end
 

@@ -1,8 +1,12 @@
-<p style="font-weight: bold"> <%= comment.name  %> </p>
+<% if comment.body? %>
+  <p>User_id: <%= comment.user_id %></p>
+  <p>Body: <%= comment.body %></p>
 
-<p><%= comment.body %></p>
+<%end %>
+
 
 <!--<time><%#= comment.created_at.to_date.strftime('%d %B, %Y') %></time>-->
-
-<small><%= link_to 'удалить', [comment.post, comment], method: :delete, data: {confirm: 'Вы уверенны?'} if comment.persisted? %></small>
+<% if user_signed_in? %>
+  <small><%= link_to 'удалить', [comment.post, comment], method: :delete, data: {confirm: 'Вы уверенны?'} if comment.persisted? %></small>
+<% end %>
 <hr>
